@@ -12,6 +12,7 @@ const images = [
 ]
 
 const SLIDER_CENTER_POSITION = 50
+const IMAGE_CHANGE_INTERVAL = 5000
 
 export const ImageHero = () => {
 	const shuffledImages = useMemo(() => images.sort(() => Math.random() - 0.5), [])
@@ -20,36 +21,21 @@ export const ImageHero = () => {
 
 	const reactCompareSliderRef = useReactCompareSliderRef();
 
-	// // Safely use the ref properties in an effect or event handler callback.
-	// useEffect(() => {
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setIndex1((prevIndex) => (prevIndex + 1) % shuffledImages.length)
+		}, IMAGE_CHANGE_INTERVAL)
 
-	// 	setInterval(() => {
-	// 		const currentPositionString = reactCompareSliderRef.current.handleContainer?.ariaValueNow
-	// 		const currentPosition = currentPositionString ? parseInt(currentPositionString, 10) : 50
-	// 		console.log(currentPosition)
-
-
-	// 		if (currentPosition === SLIDER_CENTER_POSITION) {
-	// 			return;
-	// 		}
-
-	// 		const newPosition = currentPosition - Math.round((currentPosition - SLIDER_CENTER_POSITION) / 2)
-	// 		console.log(newPosition)
-	// 		reactCompareSliderRef.current.setPosition(newPosition)
-	// 	}, 100)
-	// }, []);
+		return () => clearInterval(timer)
+	}, [shuffledImages.length])
 
 	useEffect(() => {
-		setTimeout(() => {
-			setIndex1((index2 + 1) % shuffledImages.length)
-		}, 5000)
-	}, [index2])
+		const timer = setTimeout(() => {
+			setIndex2((prevIndex) => (prevIndex + 1) % shuffledImages.length)
+		}, IMAGE_CHANGE_INTERVAL / 2)
 
-	useEffect(() => {
-		setTimeout(() => {
-			setIndex2((index1 + 1) % shuffledImages.length)
-		}, 5000)
-	}, [index1])
+		return () => clearTimeout(timer)
+	}, [index1, shuffledImages.length])
 
 	return (
 		<div className="relative">
