@@ -1,6 +1,5 @@
 'use client'
 
-import { COLORS } from "@/app/constants"
 import { useEffect, useMemo, useState } from "react"
 import { ReactCompareSlider, ReactCompareSliderImage, useReactCompareSliderRef } from "react-compare-slider"
 
@@ -47,9 +46,9 @@ export const ImageHero = () => {
 			/>
 			<h1 className="pointer-events-none absolute z-10 bottom-1/4 left-0 right-0 text-center text-5xl font-extrabold tracking-tight text-white">
 				<span className="ml-[3%] sm:text-9xl">
-					<span className={`text-[${COLORS.CAIT}]`}>Cait</span>
+					<span className={`text-[hsl(325,100%,70%)]`}>Cait</span>
 					<span> + </span>
-					<span className={`text-[${COLORS.LACY}]`}>Lacy</span>
+					<span className={`text-[hsl(237,100%,70%)]`}>Lacy</span>
 				</span>
 			</h1>
 		</div>
