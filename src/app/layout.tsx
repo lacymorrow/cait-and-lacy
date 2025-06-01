@@ -6,23 +6,20 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
-	title: "Cait + Lacy",
-	description: "We're coming for your jellyfish...",
-	icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "Cait + Lacy",
+  description: "We're coming for your jellyfish...",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  metadataBase: new URL("https://caitandlacy.com"),
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{ children: React.ReactNode }>) {
-	return (
-		<html lang="en" className={`${GeistSans.variable}`}>
-			<body>
-				<TRPCReactProvider>
-
-					{children}
-
-				</TRPCReactProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" className={`${GeistSans.variable}`}>
+      <body>
+        <TRPCReactProvider>{children}</TRPCReactProvider>
+      </body>
+    </html>
+  );
 }
