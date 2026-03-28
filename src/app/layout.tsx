@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
-        <Script defer src="https://analytics.lacy.sh/script.js" data-website-id="5d644533-574f-47ea-a374-6d10b05b0b07" />
+        <Script defer src="https://analytics.lacy.sh/script.js" data-website-id="f7ac9591-b254-4b5d-8f3d-4ea26d1674b1" />
       </body>
     </html>
   );
