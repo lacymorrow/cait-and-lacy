@@ -2,17 +2,11 @@
 
 A personal wedding site for Cait and Lacy. Features an interactive image compare slider that cycles through photos.
 
-## Screenshots
+## Screenshot
 
 <div align="center">
 
-### Desktop
-
-![Desktop screenshot showing the Cait + Lacy compare slider](public/screenshots/screenshot-desktop.png)
-
-### Mobile
-
-![Mobile screenshot showing the Cait + Lacy compare slider](public/screenshots/screenshot-mobile.png)
+![Cait + Lacy compare slider hero](public/screenshots/screenshot-desktop.png)
 
 </div>
 
